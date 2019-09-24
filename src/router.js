@@ -10,8 +10,14 @@ const router = new Router({
         {
             path: "/",
             name: "home",
-            component: Home
+            component: Home,
+            meta: {
+                title: "亲近母语"
+            }
         }
     ]
+})
+router.afterEach((to, from) => {
+    document.title = to.meta.title
 })
 export default router
